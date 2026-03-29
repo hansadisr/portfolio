@@ -5,7 +5,7 @@ import { Briefcase, Users, Star, Award } from "lucide-react";
 const experiences = [
   {
     role: "Treasurer",
-    organization: "IEEE Computer Society",
+    organization: "IEEE Computer Society Chapter, University of Ruhuna",
     icon: <Briefcase size={28} />,
     color: "var(--color-neon-purple)",
     description: "Managed financial operations, budgeting, and funding for society events and initiatives.",
@@ -18,15 +18,15 @@ const experiences = [
     description: "Led multiple technical and non-technical events, coordinating teams and ensuring successful execution.",
   },
   {
-    role: "Team Lead",
-    organization: "AIESEC",
+    role: "Volunteering",
+    organization: "AIESEC University of Ruhuna",
     icon: <Users size={28} />,
     color: "var(--color-neon-cyan)",
     description: "Guided a team of volunteers, facilitating cross-cultural exchanges and leadership development programs.",
   },
   {
-    role: "Finance Team Lead",
-    organization: "University Exhibition",
+    role: "FundRaising Committee Team Lead",
+    organization: "Rextro Exhibition, University of Ruhuna",
     icon: <Award size={28} />,
     color: "#ff00ff",
     description: "Spearheaded the finance committee for the university's major exhibition, securing sponsorships and managing expenses.",
