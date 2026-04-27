@@ -55,7 +55,7 @@ export function Education() {
               
               <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-primary/10 text-primary border border-primary/20 font-medium text-xs sm:text-sm shadow-sm">
                 <Award size={16} className="sm:w-4 sm:h-4" />
-                <span>CGPA: 3.43 / 4.0</span>
+                <span>CGPA: 3.46 / 4.0</span>
               </div>
             </div>
           </div>

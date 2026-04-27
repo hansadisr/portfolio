@@ -9,8 +9,13 @@ import taskManagerImg from "../../assets/projects/Task Manager System.png";
 import jungleOdysseyImg from "../../assets/projects/Jungle Odyssey Booking Platform.png";
 import jungleOdysseyVideo from "../../assets/projects/Jungle Odyssey Booking Platform/Jungle Odyssey Booking Platform.mp4";
 import smartSeatVideo from "../../assets/projects/Smart Seat Booking/Smart Seat Booking.mp4";
+import aiChatVideo from "../../assets/projects/AI Book Character Chat App/AI Book Character Chat App.mp4";
+import uberFareVideo from "../../assets/projects/Uber Fare Prediction/Uber Fare Prediction.mp4";
 import uberFareImg from "../../assets/projects/Uber Fare Prediction.png";
 import travelMateImg from "../../assets/projects/TravelMate.png";
+import taskManagerVideo from "../../assets/projects/Task Manager System/Task Manager System.mp4";
+import travelMateVideo from "../../assets/projects/Travel Mate/Travel Mate.mp4";
+
 
 const categories = ["All", "Full-Stack", "DevOps", "AI/ML"];
 
@@ -24,7 +29,8 @@ const projects = [
     github: "https://github.com/hansadisr/character-chatbot",
     live: "#",
     image: aiChatImg,
-    video: null,
+    video: aiChatVideo,
+    isPortrait: true,
   },
   {
     title: "Smart Seat Booking System",
@@ -44,9 +50,9 @@ const projects = [
     tech: ["React", "Docker", "AWS", "CI/CD"],
     category: "DevOps",
     github: "https://github.com/hansadisr/devops-projects",
-    live: "#",
+    live: "http://13.218.98.235:3000/",
     image: taskManagerImg,
-    video: null,
+    video: taskManagerVideo,
   },
   {
     title: "Uber Fare Prediction",
@@ -57,7 +63,7 @@ const projects = [
     github: "https://github.com/hansadisr/uber-fare-prediction",
     live: "#",
     image: uberFareImg,
-    video: null,
+    video: uberFareVideo,
   },
   {
     title: "Jungle Odyssey Booking Platform",
@@ -79,7 +85,8 @@ const projects = [
     github: "https://github.com/tanuri2002/TravelMate",
     live: "#",
     image: travelMateImg,
-    video: null,
+    video: travelMateVideo,
+    isPortrait: true,
   },
 ];
 
@@ -109,18 +116,17 @@ export function Projects() {
             Featured <span className="text-gradient">Projects</span>
           </h2>
           <div className="w-20 sm:w-24 h-1 bg-gradient-to-r from-[var(--color-neon-purple)] to-[var(--color-neon-cyan)] mx-auto rounded-full mb-8 sm:mb-12" />
-          
+
           {/* Tabs */}
           <div className="flex flex-wrap justify-center gap-2 sm:gap-4 mb-8 sm:mb-12">
             {categories.map((category) => (
               <button
                 key={category}
                 onClick={() => setActiveTab(category)}
-                className={`px-4 sm:px-6 py-1.5 sm:py-2 rounded-full text-xs sm:text-sm font-medium transition-all duration-300 ${
-                  activeTab === category
-                    ? "bg-primary text-primary-foreground shadow-[0_0_15px_rgba(176,38,255,0.5)] scale-105"
-                    : "glass hover:bg-primary/20 text-foreground/80 hover:text-foreground"
-                }`}
+                className={`px-4 sm:px-6 py-1.5 sm:py-2 rounded-full text-xs sm:text-sm font-medium transition-all duration-300 ${activeTab === category
+                  ? "bg-primary text-primary-foreground shadow-[0_0_15px_rgba(176,38,255,0.5)] scale-105"
+                  : "glass hover:bg-primary/20 text-foreground/80 hover:text-foreground"
+                  }`}
               >
                 {category}
               </button>
@@ -142,58 +148,58 @@ export function Projects() {
                 onClick={() => setSelectedProject(project)}
                 className="glass rounded-3xl overflow-hidden group relative flex flex-col h-full cursor-pointer"
               >
-              <div className="relative w-full aspect-[4/3] sm:aspect-video overflow-hidden border-b border-border/50">
-                <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent z-10 pointer-events-none" />
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  referrerPolicy="no-referrer"
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                />
-                
-                <div className="absolute top-4 right-4 z-20 flex gap-3">
-                  <a
-                    href={project.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    onClick={(e) => e.stopPropagation()}
-                    className="w-10 h-10 rounded-full glass flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-colors shadow-lg"
-                  >
-                    <Github size={20} />
-                  </a>
-                  <a
-                    href={project.live}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    onClick={(e) => e.stopPropagation()}
-                    className="w-10 h-10 rounded-full glass flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-colors shadow-lg"
-                  >
-                    <ExternalLink size={20} />
-                  </a>
-                </div>
-              </div>
+                <div className="relative w-full aspect-[4/3] sm:aspect-video overflow-hidden border-b border-border/50">
+                  <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent z-10 pointer-events-none" />
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    referrerPolicy="no-referrer"
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  />
 
-              <div className="p-6 sm:p-8 relative z-20 flex-1 flex flex-col">
-                <h3 className="text-lg sm:text-2xl font-bold mb-3 sm:mb-4 group-hover:text-primary transition-colors">
-                  {project.title}
-                </h3>
-                <p className="text-xs sm:text-sm text-foreground/70 mb-4 sm:mb-6 leading-relaxed line-clamp-2">
-                  {project.description}
-                </p>
-
-                <div className="flex flex-wrap gap-1.5 sm:gap-2 mt-auto">
-                  {project.tech.map((tech, techIndex) => (
-                    <span
-                      key={techIndex}
-                      className="px-2 sm:px-3 py-0.5 sm:py-1 rounded-full text-xs font-medium bg-primary/10 text-primary border border-primary/20"
+                  <div className="absolute top-4 right-4 z-20 flex gap-3">
+                    <a
+                      href={project.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={(e) => e.stopPropagation()}
+                      className="w-10 h-10 rounded-full glass flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-colors shadow-lg"
                     >
-                      {tech}
-                    </span>
-                  ))}
+                      <Github size={20} />
+                    </a>
+                    <a
+                      href={project.live}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={(e) => e.stopPropagation()}
+                      className="w-10 h-10 rounded-full glass flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-colors shadow-lg"
+                    >
+                      <ExternalLink size={20} />
+                    </a>
+                  </div>
                 </div>
-              </div>
-            </motion.div>
-          ))}
+
+                <div className="p-6 sm:p-8 relative z-20 flex-1 flex flex-col">
+                  <h3 className="text-lg sm:text-2xl font-bold mb-3 sm:mb-4 group-hover:text-primary transition-colors">
+                    {project.title}
+                  </h3>
+                  <p className="text-xs sm:text-sm text-foreground/70 mb-4 sm:mb-6 leading-relaxed line-clamp-2">
+                    {project.description}
+                  </p>
+
+                  <div className="flex flex-wrap gap-1.5 sm:gap-2 mt-auto">
+                    {project.tech.map((tech, techIndex) => (
+                      <span
+                        key={techIndex}
+                        className="px-2 sm:px-3 py-0.5 sm:py-1 rounded-full text-xs font-medium bg-primary/10 text-primary border border-primary/20"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </motion.div>
+            ))}
           </AnimatePresence>
         </motion.div>
       </div>
@@ -222,14 +228,14 @@ export function Projects() {
                 <X size={20} className="sm:w-6 sm:h-6" />
               </button>
 
-              <div className="w-full relative bg-black/60 aspect-video flex-shrink-0">
+              <div className={`w-full relative bg-black/60 flex-shrink-0 flex items-center justify-center overflow-hidden ${selectedProject.isPortrait ? 'h-[500px] sm:h-[70vh]' : 'aspect-video'}`}>
                 {selectedProject.video ? (
                   <video
                     src={selectedProject.video}
                     autoPlay
                     controls
                     controlsList="nodownload"
-                    className="w-full h-full object-contain"
+                    className={`max-h-full ${selectedProject.isPortrait ? 'h-full w-auto' : 'w-full h-full object-contain'}`}
                   />
                 ) : (
                   <img
@@ -242,7 +248,7 @@ export function Projects() {
 
               <div className="p-4 sm:p-6 md:p-8 lg:p-10">
                 <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4">{selectedProject.title}</h3>
-                
+
                 <div className="flex flex-wrap gap-1.5 sm:gap-2 mb-4 sm:mb-6">
                   {selectedProject.tech.map((tech: string, i: number) => (
                     <span
